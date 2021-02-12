@@ -15,7 +15,7 @@ Make sure to install Tensorflow 1.14 and Keras 2.2.5 modules as they are mandato
 We used a specific astropi conda environment to reproduce Astro Pi contraints and debug on local PC as well as raspberry pi.
 
 ## Training Neural Network models
-This training script will train both a 2D Convolutional Network as well as a Mobilenetv2 based Neural Network using Transfer learning.
+This training script [here](https://github.com/cl3m3nt/bergson/blob/master/src/training.py) will train both a 2D Convolutional Network as well as a Mobilenetv2 based Neural Network using Transfer learning.
 We reached with our limited Dataset 0.9634 accuracy with Conv2D after 10 epochs  and 0.8415 accuracy with Mobilenet after 20 epochs.
 
 ```bash
@@ -23,7 +23,7 @@ python3 training.py
 ```
 
 ## Predicting with Neural Network models
-The main script will do inference and run only on Astro Pi hardware as it requires a Raspberry Pi camera Hardware.
+The main script [here](https://github.com/cl3m3nt/bergson/blob/master/src/main.py) will do inference and run only on Astro Pi hardware as it requires a Raspberry Pi camera Hardware.
 The default version of the script will use Mobilenetv2 architecture, as we thought it more robust than simple Conv2D model.
 To allow Mobilenetv2 architecture to effectively run on Astro Pi, we use the TFLite converter to make sure the HW can process inference.
 In case it would not run on ISS Astro Pi, we can fall back to using Conv2D model instead which is less computational heavy.
