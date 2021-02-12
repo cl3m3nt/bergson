@@ -35,3 +35,5 @@ To so, comment Mobilenetv2 related lines in main function and uncomment Conv2D r
 ```bash
 python3 main.py
 ```
+
+Before running main.py, make sure you have copied/moved the models files [here](https://github.com/cl3m3nt/bergson/tree/master/models) in the same directory than main.py as they are required to be loaded for the script to successfully run.
