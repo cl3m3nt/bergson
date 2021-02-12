@@ -3,6 +3,8 @@
 This repository hosts the project done by Bergson Highschool as part of Astro Pi Challenge 2021.
 The Bergson team worked on building an Artificial Intelligence model predicting NO2 polution from NDVI pictures.
 
+<img width="595" alt="Screenshot 2021-02-12 at 16 05 40" src="https://user-images.githubusercontent.com/8882133/107785033-64bd4600-6d4c-11eb-9976-c3132764dd0d.png">
+
 In addition of detecting NO2 polution to help protecting Earth, we wanted to evaluate Artificial Intelligence opportunity to be run on Astro Pi.
 To do so, we built two Deep Learning classifier models, a simple Convolutional Neural Network and a Mobilenetv2 Neural Network.
 As part of our project, we wanted to validate the feasibility of running real time inference on Astro Pi limited Hardware.
