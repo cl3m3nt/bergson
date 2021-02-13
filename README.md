@@ -39,4 +39,4 @@ python3 main.py
 Before running main.py, make sure you have copied/moved the models files [here](https://github.com/cl3m3nt/bergson/tree/master/models) in the same directory than main.py as they are required to be loaded for the script to successfully run.
 
 Otherwise, you can download only bergon.zip file [here](https://github.com/cl3m3nt/bergson/blob/master/bergson.zip) and unzip it.
-To use the training.py script, you can download the dataset [here](https://storage.googleapis.com/bergsondataset/dataset.zip)within your extracted bergson folder. Unzip dataset then you should be able to train again the Neural Networks.
+To use the training.py script, you can download the dataset [here](https://storage.googleapis.com/bergsondataset/dataset.zip) within your extracted bergson folder. Unzip dataset then you should be able to train again the Neural Networks.
