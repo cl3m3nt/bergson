@@ -25,7 +25,7 @@ python3 training.py
 ```
 
 ## Predicting with Neural Network models
-The main script [here](https://github.com/cl3m3nt/bergson/blob/master/src/main.py) will do inference and run only on Astro Pi hardware as it requires a Raspberry Pi camera Hardware.
+The main script [here](https://github.com/cl3m3nt/bergson/blob/master/src/main.py) will do inference and run only on Astro Pi hardware as it requires a Raspberry Pi camera Hardware. Data we will collect during experiment will allow us adress the model validation challenge, as we will leverage it to measure how good our model made prediction. 
 The default version of the script will use Mobilenetv2 architecture, as we thought it more robust than simple Conv2D model.
 To allow Mobilenetv2 architecture to effectively run on Astro Pi, we use the TFLite converter to make sure the HW can process inference.
 In case it would not run on ISS Astro Pi, we can fall back to using Conv2D model instead which is less computational heavy.
