@@ -18,7 +18,7 @@ More information about Astro Pi libraries and HW can be found [here](https://pro
 
 ## Training Neural Network models
 The training script [here](https://github.com/cl3m3nt/bergson/blob/master/src/training.py) will train both a 2D Convolutional Network as well as a Mobilenetv2 based Neural Network using Transfer learning.
-We reached with our limited Dataset 0.9634 accuracy with Conv2D after 10 epochs  and 0.8415 accuracy with Mobilenet after 20 epochs on training data. Because of challenge short timing and we could not invest as much as we wanted on building a robust dataset with more data and both training and validation data. As a first shot, we hope that using Mobilenetv2 with our limited data would anyway provide some interesting result.
+We reached with our limited Dataset 0.9634 accuracy with Conv2D after 10 epochs  and 0.8415 accuracy with Mobilenet after 20 epochs on training data. Because of challenge short timing we could not invest as much as we wanted on building a robust dataset with more data and both training and validation data. As a first shot, we hope that using Mobilenetv2 with our limited data would anyway provide some interesting result.
 
 ```bash
 python3 training.py
