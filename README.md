@@ -28,7 +28,8 @@ python3 training.py
 The main script [here](https://github.com/cl3m3nt/bergson/blob/master/src/main.py) will do inference and run only on Astro Pi hardware as it requires a Raspberry Pi camera Hardware. Data we will collect during experiment will allow us adress the model validation challenge, as we will leverage it to measure how good our model made prediction. 
 The default version of the script will use Mobilenetv2 architecture, as we thought it more robust than simple Conv2D model.
 To allow Mobilenetv2 architecture to effectively run on Astro Pi, we use the TFLite converter to make sure the HW can process inference.
-In case it would not run on ISS Astro Pi, we can fall back to using Conv2D model instead which is less computational heavy.
+Even though it's challenging, we successfully ran the experiment on Flight OS for 3 hours, making about [2-3] x inference per minutes at 98% CPU usage.
+In case it would not run on ISS actual Astro Pi, we can fall back to using Conv2D model instead which is less computational heavy.
 To do so, comment Mobilenetv2 related lines in main function and uncomment Conv2D related ones.
 
 
