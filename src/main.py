@@ -95,7 +95,7 @@ def scale_down(image:np.array)->np.array:
         output (np.array): a 2D ndvi image
     """
     src = image
-    scale_percent = 12.5
+    scale_percent = 25
     width = int(src.shape[1] * scale_percent / 100)
     height = int(src.shape[0] * scale_percent / 100)
     dsize = (width, height)
