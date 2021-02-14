@@ -3,7 +3,6 @@ import matplotlib.pyplot as plt
 import numpy as np
 import os
 from PIL import Image
-from prettytable import PrettyTable
 import random
 import keras
 from keras.models import Sequential, Model

@@ -236,7 +236,7 @@ def main():
     now_time = datetime.now()
     i = 0
     # run a loop for 2 minutes
-    while (now_time < start_time + timedelta(minutes=1)):
+    while (now_time < start_time + timedelta(minutes=175)):
 
         # Take Earth Picture
         timestamp = datetime.now().strftime("%Y-%m-%d_%H:%M:%S")
