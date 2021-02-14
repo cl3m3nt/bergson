@@ -13,12 +13,16 @@ We successfully ran inference with both simple Conv2D model and an optimized ver
 ## Pre-Requesite
 Make sure to install Tensorflow 1.14 and Keras 2.2.5 modules as they are mandatory per Astro Pi challenge guidance.
 We used a specific astropi conda environment to reproduce Astro Pi contraints and debug on local PC as well as raspberry pi.
+You can install all pre-requesite libraries with:
+```bash
+pip install -r requirements.txt
+```
 More information about Astro Pi libraries and HW can be found [here](https://projects.raspberrypi.org/en/projects/code-for-your-astro-pi-mission-space-lab-experiment/2)
 
 
 ## Training Neural Network models
 The training script [here](https://github.com/cl3m3nt/bergson/blob/master/src/training.py) will train both a 2D Convolutional Network as well as a Mobilenetv2 based Neural Network using Transfer learning.
-We reached with our limited Dataset 0.9634 accuracy with Conv2D after 10 epochs  and 0.8415 accuracy with Mobilenet after 20 epochs on training data. Because of challenge short timing we could not invest as much as we wanted on building a robust dataset with more data and both training and validation data. As a first shot, we hope that using Mobilenetv2 with our limited data would anyway provide some interesting result.
+We reached with our limited Dataset 0.9512 accuracy with Conv2D after 10 epochs  and 0.8537 accuracy with Mobilenet after 20 epochs on training data. Because of Astro Pi challenge short timing we could not invest as much as we wanted on building a robust dataset with more data and both training and validation data. As a first shot, we hope that using Mobilenetv2 with our limited data would anyway provide some interesting result.
 
 ```bash
 python3 training.py
@@ -28,7 +32,7 @@ python3 training.py
 The main script [here](https://github.com/cl3m3nt/bergson/blob/master/src/main.py) will do inference and run only on Astro Pi hardware as it requires a Raspberry Pi camera Hardware. Data we will collect during experiment will allow us adress the model validation challenge, as we will leverage it to measure how good our model made prediction. 
 The default version of the script will use Mobilenetv2 architecture, as we thought it more robust than simple Conv2D model.
 To allow Mobilenetv2 architecture to effectively run on Astro Pi, we use the TFLite converter to make sure the HW can process inference.
-Even though it's challenging, we successfully ran the experiment on Flight OS for 3 hours, making about [2-3] x inference per minutes at 98% CPU usage.
+Even though it's challenging, we successfully ran the experiment on Flight OS for 3 hours, making about 10 x inferences per minute at 98% CPU usage.
 In case it would not run on ISS actual Astro Pi, we can fall back to using Conv2D model instead which is less computational heavy.
 To do so, comment Mobilenetv2 related lines in main function and uncomment Conv2D related ones.
 
