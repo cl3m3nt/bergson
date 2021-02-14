@@ -131,7 +131,7 @@ def scale_down(image:np.array)->np.array:
 
     src = image
     #percent by which the image is resized
-    scale_percent = 25
+    scale_percent = 12.5
 
     #calculate the 50 percent of original dimensions
     width = int(src.shape[1] * scale_percent / 100)
@@ -153,7 +153,7 @@ def get_conv2D_model()->object:
     """
 
     model = keras.Sequential([
-    keras.layers.Conv2D(8,(3,3),input_shape=(486,648,1),use_bias=False),
+    keras.layers.Conv2D(8,(3,3),input_shape=(243,324,1),use_bias=False),
     keras.layers.MaxPool2D(2,2),
     keras.layers.Conv2D(16,(3,3),use_bias=False),
     keras.layers.MaxPool2D(2,2),
@@ -180,11 +180,11 @@ def get_mobilenetv2_model():
         model (object): a Tranfer Learning model based on Mobilenetv2 Architecture
     """
 
-    mobilenetv2 = MobileNetV2(include_top=False, weights='imagenet',input_shape=(486,648,3))
+    mobilenetv2 = MobileNetV2(include_top=False, weights='imagenet',input_shape=(243,324,3))
     for layer in mobilenetv2.layers:
         layer.trainable = False
     mobilenetv2_preprocess = preprocess_input
-    input_shape = (486,648,3)
+    input_shape = (243,324,3)
     input = keras.layers.Input(shape=input_shape, name='img_in')
     x = mobilenetv2_preprocess(input)
     x = mobilenetv2_preprocess(input)

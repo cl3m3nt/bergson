@@ -31,8 +31,7 @@ iss.compute()
 
 # Camera Resolution
 rpi_cam = PiCamera()
-rpi_cam.resolution = (648, 486)  # Using AI expected resolution
-
+rpi_cam.resolution = (1296, 972)
 
 # Camera Data Acquisition
 def capture(camera, image):
@@ -88,6 +87,22 @@ def contrast_stretch(im):
     return out
 
 
+def scale_down(image:np.array)->np.array:
+    """ Scale down a NDVI image to fit Neural Network input and make it faster
+    Args:
+        image (np.array): a 2D ndvi image
+    Returns:
+        output (np.array): a 2D ndvi image
+    """
+    src = image
+    scale_percent = 12.5
+    width = int(src.shape[1] * scale_percent / 100)
+    height = int(src.shape[0] * scale_percent / 100)
+    dsize = (width, height)
+    output = cv2.resize(src, dsize)
+    return output
+
+
 def get_ndvi(image_path):
     """
     Transform a raw image to ndvi image
@@ -99,6 +114,7 @@ def get_ndvi(image_path):
     bottom[bottom == 0] = 0.00001  # Make sure we don't divide by zero!
     ndvi_image = (r.astype(float) - b) / bottom
     ndvi_image = contrast_stretch(ndvi_image)
+    ndvi_image = scale_down(ndvi_image)
     ndvi_image = ndvi_image.astype(np.uint8)
     return ndvi_image
 
