@@ -45,3 +45,9 @@ Before running main.py, make sure you have copied/moved the models files [here](
 
 Otherwise, you can download only bergon.zip file [here](https://github.com/cl3m3nt/bergson/blob/master/bergson.zip) and unzip it.
 To use the training.py script, you can download the dataset [here](https://storage.googleapis.com/bergsondataset/dataset.zip) within your extracted bergson folder. Unzip dataset then you should be able to train again the Neural Networks.
+
+
+## Results from ISS
+Data back from ISS allows to evaluate the quality of the first version of our model.
+A selection of x245 pictures available [here](https://storage.googleapis.com/bergson_iss/pictures.zip) has been used to compare our AI model NO2 prediction vs ESA [Sentinel-5P tropospheric satellite](https://maps.s5p-pal.com/) NO2 values.
+We post-processed this data to finally output the Bergson team results anlysis for Astro Pi challenge phase 4. Our full report is available [here](https://github.com/cl3m3nt/bergson/blob/master/results/Astro_Pi_Mission_Space_Lab_Bergson_Report.pdf)
